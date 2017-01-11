@@ -2,6 +2,14 @@
 
 $card_height: 300px;
 
+:host {
+  width: 30%;
+
+  @media all and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
 .gallery {
   overflow: hidden;
   position: relative;
@@ -9,7 +17,6 @@ $card_height: 300px;
   border: 2px solid white;
 
   &__cover {
-    width: $card_height + 100px;
     height: $card_height;
     background-size: cover;
     background-repeat: no-repeat;

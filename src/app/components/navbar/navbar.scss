@@ -28,6 +28,10 @@
       font-size: 0.8em;
       text-transform: uppercase;
       vertical-align: 5px;
+
+      @media all and (max-width: 600px) {
+        display: none;
+      }
     }
   }
 }
