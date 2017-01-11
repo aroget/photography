@@ -1,3 +1,13 @@
+.sidebar {
+  left: 0;
+  width: 200px;
+  position: fixed;
+}
+
+.container--sidebar {
+  margin-left: 200px;
+}
+
 .container {
   padding: 30px 0;
 }

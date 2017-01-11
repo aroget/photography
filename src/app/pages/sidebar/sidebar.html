@@ -1,0 +1,13 @@
+<div [ngSwitch]="loading" class="full-height">
+  <div *ngSwitchCase="true">
+    <ar-spinner></ar-spinner>
+  </div>
+  <div *ngSwitchCase="false" class="full-height">
+    <div class="s">
+      <ar-sidebar-control [sets]="sets"></ar-sidebar-control>
+    </div>
+    <div class="s-cont">
+      <ar-slideshow [set]="activeSet"></ar-slideshow>
+    </div>
+  </div>
+</div>

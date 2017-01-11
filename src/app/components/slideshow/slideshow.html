@@ -1,0 +1,24 @@
+<div [ngSwitch]="loading">
+  <div *ngSwitchCase="true">
+    <ar-spinner></ar-spinner>
+  </div>
+  <div *ngSwitchCase="false">
+    <div class="slideshow">
+      <div class="slideshow__navigation">
+        <i
+          (click)="onPrev()"
+          class="navigation prev material-icons">
+          navigate_before
+        </i>
+        <i
+          (click)="onNext()"
+          class="navigation next material-icons">
+          navigate_next
+        </i>
+      </div>
+      <div class="slideshow__wrapper">
+        <img [src]="getImage()">
+      </div>
+    </div>
+  </div>
+</div>

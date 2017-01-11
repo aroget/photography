@@ -1,20 +1,15 @@
 <nav class="navbar">
-  <!--<div class="navbar__back">
-    <a [routerLink]="['/']">Back</a>
-  </div>-->
+  <div class="navbar__back" *ngIf="(heading | async).backButton">
+    <a [routerLink]="['/']">
+      <i class="material-icons">arrow_back</i>
+      <span>{{ (heading | async).setTitle }}</span>
+    </a>
+  </div>
   <div class="navbar__title">
-    <a [routerLink]="['/']">{{ data.realname._content }} Photography</a>
+    <a [routerLink]="['/']">
+      {{ settings.theme.user }}
+      <span>Photography</span>
+    </a>
   </div>
-  <div class="navbar__meta">
-    <div class="avatar">
-      <a [href]="data.photosurl._content" target="_blank">
-        <img
-        [src]="buildAvatarUrl(data)"
-        alt="{{ data.realname._content }} Photography">
-      </a>
-    </div>
-    <!--<div class="location">
-      <span>{{ data.location._content }}</span>
-    </div>-->
-  </div>
+
 </nav>

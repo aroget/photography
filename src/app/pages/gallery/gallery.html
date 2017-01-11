@@ -1,11 +1,15 @@
-<div [ngSwitch]="loading">
-  <div *ngSwitchCase="true">
-    <ar-spinner></ar-spinner>
-  </div>
-  <div *ngSwitchCase="false" class="flex-container">
-    <ar-gallery-item
-      [data]="gallery"
-      *ngFor="let gallery of galleries">
-    </ar-gallery-item>
+<ar-navbar></ar-navbar>
+
+<div class="container">
+  <div [ngSwitch]="loading">
+    <div *ngSwitchCase="true">
+      <ar-spinner></ar-spinner>
+    </div>
+    <div *ngSwitchCase="false" class="flex-container">
+      <ar-gallery-item
+        [data]="gallery"
+        *ngFor="let gallery of galleries">
+      </ar-gallery-item>
+    </div>
   </div>
 </div>

@@ -1,19 +1,23 @@
-<div [ngSwitch]="loading">
-  <div *ngSwitchCase="true">
-    <ar-spinner></ar-spinner>
-  </div>
-  <div *ngSwitchCase="false">
-    <ar-lightbox
-      [images]="set.photo"
-      *ngIf="isLightBoxOpen"
-      (closeLightBox)="onCloseLightBox()">
-    </ar-lightbox>
-    <div class="flex-container">
-      <ar-detail-item
-        [image]="image"
-        (openLightBox)="onOpenLightBox($event)"
-        *ngFor="let image of set.photo">
-      </ar-detail-item>
+<ar-navbar></ar-navbar>
+
+<div class="container">
+  <div [ngSwitch]="loading">
+    <div *ngSwitchCase="true">
+      <ar-spinner></ar-spinner>
+    </div>
+    <div *ngSwitchCase="false">
+      <ar-lightbox
+        [images]="set.photo"
+        *ngIf="isLightBoxOpen"
+        (closeLightBox)="onCloseLightBox()">
+      </ar-lightbox>
+      <div class="flex-container">
+        <ar-detail-item
+          [image]="image"
+          (openLightBox)="onOpenLightBox($event)"
+          *ngFor="let image of set.photo">
+        </ar-detail-item>
+      </div>
     </div>
   </div>
 </div>

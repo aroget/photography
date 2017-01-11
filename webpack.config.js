@@ -246,6 +246,10 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
         from: root('src/public')
+      }]),
+
+      new CopyWebpackPlugin([{
+        from: root('CNAME')
       }])
     );
   }

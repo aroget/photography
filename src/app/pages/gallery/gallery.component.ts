@@ -9,7 +9,7 @@ import { AppBaseComponent } from '../../app.base.component';
   templateUrl: './gallery.html',
   styleUrls: ['./gallery.scss']
 })
-export class GalleryComponent extends AppBaseComponent implements OnInit {
+export class GalleryDetailPageComponent extends AppBaseComponent implements OnInit {
   loading = true;
   galleries = [];
   constructor(

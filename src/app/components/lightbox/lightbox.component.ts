@@ -56,6 +56,8 @@ export class LightBoxComponent implements OnInit {
           this.onNext();
         } else if (e.keyCode === 37) {
           this.onPrev();
+        } else if (e.keyCode === 27) {
+          this.onCloseLightBox();
         }
       },
       err => {

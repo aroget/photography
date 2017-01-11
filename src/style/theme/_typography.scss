@@ -1,3 +1,5 @@
+@import './_colors';
+
 body {
   font-size: 130%;
   line-height: 1.4;
@@ -29,3 +31,14 @@ a {
         -ms-user-select: none;
             user-select: none;
 }
+
+
+@mixin bold-font() {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin regular-font() {
+  font-family: 'Montserrat', sans-serif;
+}
+
+

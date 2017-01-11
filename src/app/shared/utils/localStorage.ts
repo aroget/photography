@@ -1,5 +1,6 @@
 export const LOCAL_STORAGE_KEY = {
-  'PROFILE': 'profile'
+  'PROFILE': 'profile',
+  'SETS': 'sets'
 };
 
 export function setStorage(key: string, value: any): void {

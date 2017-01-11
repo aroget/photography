@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { buildAvatarUrl } from '../../shared/utils';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import { InavbarState } from '../../reducers';
 
 @Component({
   selector: 'ar-navbar',
@@ -9,9 +11,14 @@ import { buildAvatarUrl } from '../../shared/utils';
 })
 export class NavBarComponent implements OnInit {
   @Input() data: any;
-  buildAvatarUrl = buildAvatarUrl;
+  heading: Observable<InavbarState>;
+  settings = require('../../settings/config.json');
 
-  constructor() { }
+  constructor(
+    private store: Store<InavbarState>
+  ) {
+    this.heading = this.store.select('navbar');
+  }
 
   ngOnInit() { }
 

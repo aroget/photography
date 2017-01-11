@@ -2,25 +2,36 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-
+import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
+
 import {
-  DetailComponent,
-  GalleryComponent
+  navbarReducer
+} from './reducers';
+
+import {
+  SidebarPageComponent,
+  DetailPageComponent,
+  GalleryDetailPageComponent
 } from './pages';
 
 import { routing } from './app.routing';
-
-import { ProfileGuard } from './guards';
 import { FlickrService} from './services';
+
+import {
+  GalleryGuard,
+  ProfileGuard
+} from './guards';
 
 import {
   NavBarComponent,
   SpinnerComponent,
   LightBoxComponent,
+  SlideShowComponent,
   DetailItemComponent,
   GalleryItemComponent,
-  LightBoxImageComponent
+  LightBoxImageComponent,
+  SideBarControlComponent
 } from './components';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
@@ -30,20 +41,27 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     BrowserModule,
     HttpModule,
     FormsModule,
-    routing
+    routing,
+    StoreModule.provideStore(
+      { navbar: navbarReducer }
+    )
   ],
   declarations: [
     AppComponent,
-    DetailComponent,
     NavBarComponent,
-    GalleryComponent,
     SpinnerComponent,
     LightBoxComponent,
+    SlideShowComponent,
+    DetailPageComponent,
     DetailItemComponent,
+    SidebarPageComponent,
     GalleryItemComponent,
-    LightBoxImageComponent
+    LightBoxImageComponent,
+    SideBarControlComponent,
+    GalleryDetailPageComponent,
   ],
   providers: [
+    GalleryGuard,
     ProfileGuard,
     FlickrService
   ],
