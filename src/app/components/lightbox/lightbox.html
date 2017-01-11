@@ -1,0 +1,21 @@
+<div class="lightbox">
+  <span class="close-button" (click)="onCloseLightBox()">
+    Close
+    <i class="material-icons">close</i>
+  </span>
+  <div class="lightbox__wrapper">
+    <div class="lightbox__canvas">
+      <i
+        (click)="onPrev()"
+        class="navigation prev material-icons">
+        navigate_before
+      </i>
+      <i
+        (click)="onNext()"
+        class="navigation next material-icons">
+        navigate_next
+      </i>
+      <ar-lightbox-image [image]="getActive()"></ar-lightbox-image>
+    </div>
+  </div>
+</div>

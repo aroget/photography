@@ -1,0 +1,42 @@
+$card_height: 300px;
+
+.gallery {
+  overflow: hidden;
+  position: relative;
+  height: $card_height;
+  border: 2px solid white;
+
+  &__cover {
+    width: $card_height + 100px;
+    height: $card_height;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__meta {
+    left: 0;
+    bottom: 0px;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    background: white;
+
+    p,
+    a {
+      margin: 0;
+      font-size: 0.8em;
+      line-height: 1.3;
+    }
+
+    .title {
+
+    }
+    .total {
+
+    }
+    a {
+
+    }
+  }
+}

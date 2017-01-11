@@ -1,0 +1,12 @@
+.container {
+  padding: 30px 0;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: center;
+  align-items: flex-start;
+}
